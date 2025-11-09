@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinQuest — Smart Finance for Students</title>
+  <style>
+    body {margin:0; font-family:'Inter', sans-serif; background:#f9fafb; color:#333;}
+    header {background:linear-gradient(90deg,#2563EB,#3B82F6); color:white; text-align:center; padding:4rem 1rem;}
+    header h1 {font-size:3rem; margin-bottom:0.5rem;}
+    header p {font-size:1.2rem; margin-bottom:1.5rem;}
+    .btn-primary {background:white; color:#2563EB; border:none; padding:0.8rem 1.5rem; font-size:1rem; border-radius:8px; cursor:pointer; transition:background 0.3s;}
+    .btn-primary:hover {background:#f0f0f0;}
+    section {padding:3rem 1rem; max-width:1000px; margin:0 auto;}
+    h2 {text-align:center; color:#333;}
+    .features {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; margin-top:2rem;}
+    .feature-card {background:white; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:center;}
+    form {background:white; padding:2rem; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1); max-width:500px; margin:2rem auto 0;}
+    label {display:block; margin-top:1rem; font-weight:600;}
+    input {width:100%; padding:0.6rem; margin-top:0.3rem; border:1px solid #ccc; border-radius:6px;}
+    #submitBtn {margin-top:1.5rem; background:#2563EB; color:white; border:none; padding:0.8rem; width:100%; border-radius:8px; font-size:1rem; cursor:pointer; transition:opacity 0.3s;}
+    #submitBtn:hover {opacity:0.9;}
+    .thankyou {display:none; text-align:center; background:#DBEAFE; color:#1E3A8A; padding:2rem; border-radius:12px; margin-top:2rem;}
+  </style>
+</head>
+<body>
+  <header id="top">
+    <h1>FinQuest</h1>
+    <p>Gamified Finance Tool Helping Students Master Their Money</p>
+    <button class="btn-primary" onclick="document.getElementById('preorder').scrollIntoView({behavior:'smooth'})">Preorder Access</button>
+  </header>
+  <section>
+    <h2>Why FinQuest?</h2>
+    <div class="features">
+      <div class="feature-card"><h3>Learn by Playing</h3><p>Level up your financial literacy through interactive challenges and rewards.</p></div>
+      <div class="feature-card"><h3>Track Your Spending</h3><p>Connect your expenses and visualize your habits in a fun, simple dashboard.</p></div>
+      <div class="feature-card"><h3>Set Financial Goals</h3><p>Achieve savings milestones with quests and badges that keep you motivated.</p></div>
+    </div>
+  </section>
+  <section>
+    <h2>About FinQuest</h2>
+    <p style="max-width:700px;margin:1rem auto;text-align:center;">FinQuest is a game-like finance platform designed for students who want to learn, manage, and grow their money smarter. Combining gamification and education, we make personal finance engaging and rewarding.</p>
+  </section>
+  <section id="preorder">
+    <h2>Preorder FinQuest Access</h2>
+    <form id="preorderForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" required>
+      <label for="card">Credit Card (Demo)</label>
+      <input type="text" id="card" placeholder="1234 5678 9012 3456" required>
+      <button id="submitBtn" type="submit">Reserve Your Spot</button>
+    </form>
+    <div class="thankyou" id="thankyouMsg">
+      <h3>Thank you for preordering FinQuest!</h3>
+      <p>We’ll notify you when early access is available.</p>
+      <a href="#top" onclick="scrollToTop(event)" style="color:#2563EB;text-decoration:underline;cursor:pointer;">Return to homepage</a>
+    </div>
+  </section>
+  <script>
+    document.getElementById('preorderForm').addEventListener('submit',function(e){e.preventDefault();this.style.display='none';document.getElementById('thankyouMsg').style.display='block';});
+    function scrollToTop(event){event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});}
+  </script>
+</body>
+</html>
